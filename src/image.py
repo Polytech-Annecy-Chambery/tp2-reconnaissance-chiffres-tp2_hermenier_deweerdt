@@ -47,7 +47,16 @@ class Image:
     #   on retourne une nouvelle image binarisee
     #==============================================================================
     def binarisation(self, S):
-        pass
+        im_bin = Image()
+        im_bin.set_pixels(np.zeros((self.H,self.W), dtype=np.uint8))
+        for h in range(self.H):
+            for w in range(self.W):
+                if self.pixels[h][w]>S:
+                    im_bin.pixels[h][w]=255
+        return im_bin
+                
+              
+     
 
 
     #==============================================================================
