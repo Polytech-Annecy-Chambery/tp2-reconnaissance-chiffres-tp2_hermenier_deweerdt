@@ -49,6 +49,7 @@ class Image:
     def binarisation(self, S):
         im_bin = Image()
         im_bin.set_pixels(np.zeros((self.H,self.W), dtype=np.uint8))
+        # on parcourt tous les pixels de l'image et on compare leur intensité à S
         for h in range(self.H):
             for w in range(self.W):
                 if self.pixels[h][w]>S:
