@@ -69,23 +69,21 @@ class Image:
     #   on retourne une nouvelle image recadree
     #==============================================================================
     def localisation(self):
-        self=self.binarisation(100)
-        L_min=0
-        L_max=self.H
-        C_min=0
-        C_max=self.W
-        for i in range(self.W):
-            for j in range(self.H):
-                if self.pixels[j][i]==0:
-                    if i<L_max:
-                        L_max=i
-                    if i>L_min:
+        L_min=self.H-1
+        L_max=0
+        C_min=self.W
+        C_max=0
+        for i in range(self.H):
+            for j in range(self.W):
+                if self.pixels[i][j]==0:
+                    if i<L_min:
                         L_min=i
-                if self.pixels[j][i]==0:
-                    if j<C_max:
-                        C_max=j
-                    if j>C_min:
+                    if i>=L_max:
+                        L_max=i
+                    if j<C_min:
                         C_min=j
+                    if j>=C_max:
+                        C_max=j
                         
         im_cadre = Image()
         im_cadre.set_pixels(self.pixels[L_min:L_max+1, C_min:C_max+1])
