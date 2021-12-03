@@ -69,7 +69,29 @@ class Image:
     #   on retourne une nouvelle image recadree
     #==============================================================================
     def localisation(self):
-        pass
+        self=self.binarisation(100)
+        L_min=0
+        L_max=self.H
+        C_min=0
+        C_max=self.W
+        for h in range(self.H):
+            for w in range(self.W):
+                if self.pixels[h][w]==0:
+                    if h<C_max:
+                        C_max=h
+                    if h>C_min:
+                        C_min=h
+                if self.pixels[h][w]==0:
+                    if w<L_max:
+                        L_max=w
+                    if w>L_min:
+                        L_min=w
+                        
+                    
+            
+            
+                
+        
 
     #==============================================================================
     # Methode de redimensionnement d'image
