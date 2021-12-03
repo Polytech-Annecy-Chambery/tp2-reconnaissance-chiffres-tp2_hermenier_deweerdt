@@ -100,7 +100,7 @@ class Image:
     def resize(self, new_H, new_W):
         im_resize = Image()
         im_resize_pixels=resize(self.pixels, (new_H, new_W), 0)
-        im_resize.set_pixels(np.uint8(im_resize_pixels*225))
+        im_resize.set_pixels(np.uint8(im_resize_pixels*255))
         return(im_resize)
 
 
