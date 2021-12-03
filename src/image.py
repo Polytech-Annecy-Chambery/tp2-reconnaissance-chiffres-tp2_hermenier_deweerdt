@@ -108,5 +108,5 @@ class Image:
     # Methode de mesure de similitude entre l'image self et un modele im
     #==============================================================================
     def similitude(self, im):
-        pass
+        tot
 
