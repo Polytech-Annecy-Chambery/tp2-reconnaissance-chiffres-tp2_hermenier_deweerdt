@@ -74,18 +74,18 @@ class Image:
         L_max=self.H
         C_min=0
         C_max=self.W
-        for i in range(self.H):
-            for j in range(self.W):
-                if self.pixels[i][j]==0:
-                    if i<C_max:
-                        C_max=i
-                    if i>C_min:
-                        C_min=i
-                if self.pixels[i][j]==0:
-                    if j<L_max:
-                        L_max=j
-                    if j>L_min:
-                        L_min=j
+        for i in range(self.W):
+            for j in range(self.H):
+                if self.pixels[j][i]==0:
+                    if i<L_max:
+                        L_max=i
+                    if i>L_min:
+                        L_min=i
+                if self.pixels[j][i]==0:
+                    if j<C_max:
+                        C_max=j
+                    if j>C_min:
+                        C_min=j
                         
                     
             
