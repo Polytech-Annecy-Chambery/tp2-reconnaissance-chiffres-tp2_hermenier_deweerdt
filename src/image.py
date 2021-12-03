@@ -85,8 +85,8 @@ class Image:
                     if j>=C_max:
                         C_max=j
                         
-        im_cadre = Image()
-        im_cadre.set_pixels(self.pixels[L_min:L_max+1, C_min:C_max+1])
+        im_recadre = Image()
+        im_recadre.set_pixels(self.pixels[L_min:L_max+1, C_min:C_max+1])
         return im_recadre
                     
             
